@@ -1,6 +1,6 @@
 import axios, { AxiosError } from 'axios';
 import { ApiError } from '../api/ApiError';
-import { readToken } from './localStorage.service';
+
 
 export const httpApi = axios.create({
   baseURL: '',
@@ -8,7 +8,7 @@ export const httpApi = axios.create({
 
 httpApi.interceptors.request.use((config) => {
   const headers = config.headers;
-  headers.set('Authorization', `Bearer ${readToken()}`);
+  headers.set('Authorization', `Bearer `);
   return config;
 });
 
