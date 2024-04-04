@@ -1,6 +1,7 @@
 import axios, { AxiosError } from 'axios';
 import { ApiError } from '../api/ApiError';
-import { readToken } from './localStorage.service';
+
+const readToken = '';
 
 export const httpApi = axios.create({
   baseURL: '',
