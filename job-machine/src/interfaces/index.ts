@@ -1,4 +1,5 @@
 import { Action } from 'redux';
+import { FormLoginType, FormRegisterType } from './interfaces';
 export interface User {
   email: string;
   password: string;
@@ -20,27 +21,28 @@ export enum AuthActionTypes {
 }
 export interface LoginRequestAction
   extends Action<AuthActionTypes.LOGIN_REQUEST> {
-  payload: User;
+  payload: FormLoginType;
+  [key: string]: any;
 }
 
 export interface LoginSuccessAction
   extends Action<AuthActionTypes.LOGIN_SUCCESS> {
-  payload: registerUser;
+  payload: FormRegisterType;
 }
 
 export interface LoginFailureAction
   extends Action<AuthActionTypes.LOGIN_FAILURE> {
   payload: string;
 }
-
 export interface RegisterRequestAction
   extends Action<AuthActionTypes.REGISTER_REQUEST> {
-  payload: registerUser;
+  payload: FormRegisterType;
+  [key: string]: any;
 }
 
 export interface RegisterSuccessAction
   extends Action<AuthActionTypes.REGISTER_SUCCESS> {
-  payload: registerUser;
+  payload: FormRegisterType;
 }
 
 export interface RegisterFailureAction
@@ -64,3 +66,5 @@ export interface AuthState {
   error: string | null;
   isLoggedIn: boolean;
 }
+
+export type FormData = FormLoginType | FormRegisterType;

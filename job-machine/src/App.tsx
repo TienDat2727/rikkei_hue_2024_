@@ -1,8 +1,9 @@
-import * as React from "react";
+import * as React from 'react';
 // import {useState}  from 'react';
-import styled from "styled-components";
-import { ThemeProvider } from "styled-components";
-import { HelmetProvider } from "react-helmet-async";
+import styled from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import { HelmetProvider } from 'react-helmet-async';
+import AuthPage from 'pages/auth/AuthPage';
 
 const Container = styled.div`
   min-height: 100vh;
@@ -17,7 +18,7 @@ const App = () => {
   return (
     // <ThemeProvider theme={}>
     <HelmetProvider>
-      <Container>Build source base</Container>
+      <AuthPage />
     </HelmetProvider>
     // </ThemeProvider>
   );

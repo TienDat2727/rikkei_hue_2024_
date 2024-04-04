@@ -1,6 +1,9 @@
-import { User, registerUser } from '../interfaces';
+import { FormLoginType, FormRegisterType } from 'interfaces/interfaces';
 
-export const fakeCallApi = ({ email, password }: User): Promise<string> => {
+export const fakeCallApi = ({
+  email,
+  password,
+}: FormLoginType): Promise<string> => {
   return new Promise((resolve, reject) => {
     resolve('Fake API response');
     if (email && password) {
@@ -10,13 +13,13 @@ export const fakeCallApi = ({ email, password }: User): Promise<string> => {
 };
 
 export const fakeCallApiRegister = ({
-  username,
+  name,
   email,
   password,
-}: registerUser): Promise<string> => {
+}: FormRegisterType): Promise<string> => {
   return new Promise((resolve, reject) => {
     resolve('Fake API register response');
-    if (username && email && password) {
+    if (name && email && password) {
       reject('Not required');
     }
   });
