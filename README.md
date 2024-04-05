@@ -1,1 +1,1 @@
-# rikkei_hue_2024_
+# rikkei*hue_2024*
