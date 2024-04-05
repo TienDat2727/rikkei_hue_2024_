@@ -4,14 +4,11 @@ import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import { HelmetProvider } from 'react-helmet-async';
 import AuthPage from 'pages/auth/AuthPage';
+import CustomLayout from 'Layout';
+import CustomForm from 'components/common/BaseForm';
 
 const Container = styled.div`
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
 `;
 
 const App = () => {
@@ -19,6 +16,10 @@ const App = () => {
     // <ThemeProvider theme={}>
     <HelmetProvider>
       <AuthPage />
+      <Container>
+        <CustomLayout />
+        <CustomForm values='hello' err='erroxx' />
+      </Container>
     </HelmetProvider>
     // </ThemeProvider>
   );

@@ -12,7 +12,7 @@ import {
   FormRegisterType,
   TypeActivePanel,
 } from 'interfaces/interfaces';
-import { dataSignIn, dataSignUp } from 'constants/constants';
+import { EMAIL_REGEX, dataSignIn, dataSignUp } from 'constants/constants';
 import { WrapperFormItem } from './WrapperFormItem.styled';
 import { useDispatch } from 'react-redux';
 import {
@@ -26,34 +26,19 @@ type FormContainerProps = {
   state: TypeActivePanel;
 };
 
-const schema = yup.object().shape({
-  email: yup
-    .string()
-    .required('Email is required')
-    .matches(
-      /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-      'Invalid email address'
-    ),
-
-  password: yup.string().min(8).max(32).required(),
-});
-
-const schema1 = yup.object().shape({
-  name: yup.string().min(8).max(32).required(),
-  email: yup
-    .string()
-    .required('Email is required')
-    .matches(
-      /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-      'Invalid email address'
-    ),
-
-  password: yup.string().min(8).max(32).required(),
-});
-
 const FormContainer = ({ state }: FormContainerProps) => {
   const [formData, setFormData] = useState<Data>(dataSignIn);
   const checkSignIn = state === 'sign-in';
+  const schema = yup.object().shape({
+    name: checkSignIn ? yup.string() : yup.string().min(8).max(32).required(),
+    email: yup
+      .string()
+      .required('Email is required')
+      .matches(EMAIL_REGEX, 'Email invalid '),
+
+    password: yup.string().min(8).max(32).required(),
+  });
+
   const dispatch = useDispatch();
   const {
     handleSubmit,
@@ -66,9 +51,7 @@ const FormContainer = ({ state }: FormContainerProps) => {
       email: '',
       password: '',
     },
-    resolver: yupResolver<FormLoginType | FormRegisterType>(
-      checkSignIn ? schema : schema1
-    ),
+    resolver: yupResolver<FormLoginType | FormRegisterType>(schema),
   });
   let timeoutId: NodeJS.Timeout;
 
@@ -94,19 +77,6 @@ const FormContainer = ({ state }: FormContainerProps) => {
   }, [state]);
 
   const handleSubmitForm = (values: FormRegisterType | FormLoginType) => {
-    // if (!('username' in values)) {
-    //   console.log('Đã vào đây 2');
-    //   dispatch(loginRequest(values));
-    //   console.log(dispatch(loginRequest(values)));
-    // } else if (
-    //   'username' in values &&
-    //   'email' in values &&
-    //   'password' in values
-    // ) {
-    //   console.log('Đã vào đây 3');
-    //   dispatch(registerRequest(values as FormRegisterType));
-    //   console.log(dispatch(registerRequest(values as FormRegisterType)));
-    // }
     if (checkSignIn) {
       dispatch(loginRequest(values));
       console.log(dispatch(loginRequest(values)));

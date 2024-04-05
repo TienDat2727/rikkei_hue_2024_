@@ -1,4 +1,3 @@
-import { Typography } from 'antd';
 import styled from 'styled-components';
 
 export const ContainerToogle = styled.div`
@@ -13,7 +12,6 @@ export const ContainerToogle = styled.div`
   z-index: 1000;
 
   .toogle {
-    background-color: #512da8;
     height: 100%;
     background: linear-gradient(to right, #512da8, #5c6bc0);
     color: #fff;
