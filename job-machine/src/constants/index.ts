@@ -1,3 +1,7 @@
-export * as actionType from './constants';
-export * as route from './routes';
+import { AuthState } from '../interfaces';
 
+export const authInitialState: AuthState = {
+  user: null,
+  error: null,
+  isLoggedIn: false,
+};
