@@ -3,7 +3,7 @@ import React from "react";
 
 interface FormProps {
   values: string;
-  err: any;
+  err: number | string;
 }
 
 const CustomForm: React.FC<FormProps> = () => {
