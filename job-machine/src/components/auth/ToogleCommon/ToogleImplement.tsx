@@ -1,6 +1,6 @@
 import { Typography } from 'antd';
 
-import { BaseButton } from 'components/common/BaseButton/BaseButton';
+import { BaseButton } from '../../common/BaseButton/BaseButton';
 import { useEffect, useState } from 'react';
 import { ContainerToogleImplement } from './ToogleImplement.styled';
 import { DataToogle, TypeActivePanel } from 'interfaces/interfaces';

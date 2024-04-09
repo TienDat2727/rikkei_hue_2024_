@@ -7,6 +7,7 @@ import AuthPage from 'pages/auth/AuthPage';
 import CustomLayout from 'Layout';
 import CustomForm from 'components/common/BaseForm';
 import { ConfigProvider } from 'antd';
+import Category from 'pages/Admin/Category/Category';
 
 const Container = styled.div`
   min-height: 100vh;
@@ -27,6 +28,7 @@ const App = () => {
         <Container>
           <CustomLayout />
           <CustomForm values='hello' err='erroxx' />
+          <Category />
         </Container>
       </HelmetProvider>
     </ConfigProvider>
