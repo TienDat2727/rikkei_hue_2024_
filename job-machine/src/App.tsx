@@ -1,16 +1,13 @@
-import * as React from 'react';
+import * as React from "react";
 // import {useState}  from 'react';
-import styled from 'styled-components';
-import { ThemeProvider } from 'styled-components';
-import { HelmetProvider } from 'react-helmet-async';
-import AuthPage from 'pages/auth/AuthPage';
-import CustomLayout from 'Layout';
-import CustomForm from 'components/common/BaseForm';
-import { ConfigProvider } from 'antd';
+import styled from "styled-components";
+import { ThemeProvider } from "styled-components";
+import { HelmetProvider } from "react-helmet-async";
+import AuthPage from "pages/auth/AuthPage";
+import CustomForm from "components/common/BaseForm";
+import { ConfigProvider } from "antd";
+import CustomLayout from "./components/layout";
 
-const Container = styled.div`
-  min-height: 100vh;
-`;
 
 const App = () => {
   return (
@@ -18,16 +15,13 @@ const App = () => {
     <ConfigProvider
       theme={{
         token: {
-          fontFamily: 'Montserrat',
+          fontFamily: "Montserrat",
         },
       }}
     >
       <HelmetProvider>
-        <AuthPage />
-        <Container>
+        {/* <AuthPage /> */}
           <CustomLayout />
-          <CustomForm values='hello' err='erroxx' />
-        </Container>
       </HelmetProvider>
     </ConfigProvider>
     // </ThemeProvider>
