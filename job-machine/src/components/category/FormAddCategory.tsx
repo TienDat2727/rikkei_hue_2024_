@@ -1,4 +1,4 @@
-import { Form, Input } from 'antd';
+import { Flex, Form, Input } from 'antd';
 import { BaseButton } from 'components/common/BaseButton/BaseButton';
 const { Item } = Form;
 
@@ -8,12 +8,16 @@ interface FormType {
   description: string;
 }
 
-const FormAddCategory = () => {
+interface FormAddCategoryProps {
+  className?: string;
+}
+
+const FormAddCategory = ({ className = '' }: FormAddCategoryProps) => {
   const handleAction = (values: FormType | undefined) => {
     console.log(values);
   };
   return (
-    <div>
+    <div className={`${className}`}>
       <h2>Thêm Category</h2>
       <Form onFinish={handleAction} style={{ maxWidth: 600 }}>
         <label htmlFor='name'>Name</label>
@@ -29,7 +33,9 @@ const FormAddCategory = () => {
           <Input placeholder='Enter description' />
         </Item>
         <Item>
-          <BaseButton>Enter Submit</BaseButton>
+          <Flex justify='flex-end'>
+            <BaseButton>Enter Submit</BaseButton>
+          </Flex>
         </Item>
       </Form>
     </div>

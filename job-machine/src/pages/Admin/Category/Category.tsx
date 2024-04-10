@@ -10,8 +10,8 @@ const Category = () => {
     <ContainerCategory>
       <h1>Chào các bạn</h1>
       <Flex justify='space-evenly'>
-        <FormAddCategory />
-        <div>
+        <FormAddCategory className='category-add' />
+        <div className='category-management'>
           <SearchCategory />
           <TableCategory />
         </div>

@@ -101,21 +101,24 @@ export const dataSource: CategoryData[] = [
   },
 ];
 
-export const columns: TableColumnsType<CategoryData> = [
+export const columns = [
   {
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
+    editable: true,
   },
   {
     title: 'Description',
     dataIndex: 'description',
     key: 'description',
+    editable: true,
   },
   {
     title: 'Slug',
     dataIndex: 'slug',
     key: 'slug',
+    editable: true,
   },
   {
     title: 'Count',
