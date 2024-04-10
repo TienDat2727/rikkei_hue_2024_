@@ -11,6 +11,7 @@ import SideBar from "./SideBar";
 import { CustomHeader } from "./CustomHeader";
 import MainContent from "./MainContent";
 import SideContent from "./SideContent";
+import logo from "../../assets/images/logo.png";
 
 const { Header, Sider, Content } = Layout;
 
@@ -29,10 +30,15 @@ const CustomLayout: React.FC = () => {
   return (
     <Layout>
       <Sider theme="light" trigger={null} collapsible collapsed={collapsed}>
-        <div
-          className="demo-logo-vertical"
-          style={{ background: colorBgContainer }}
-        />
+        <Flex align="center" justify="center">
+          <div className="logo" style={{ height: 60 }}>
+            <img
+              src={logo}
+              alt="logo"
+              style={{ width: "200px", height: "65px" }}
+            />
+          </div>
+        </Flex>
         <SideBar />
       </Sider>
       <Layout>

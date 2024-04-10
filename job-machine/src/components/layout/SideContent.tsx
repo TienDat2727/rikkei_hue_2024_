@@ -1,8 +1,6 @@
-import { Card } from "antd";
-
 
 const SideContent = () => {
-  return <>AD</>;
+  return <></>;
 };
 
 export default SideContent;

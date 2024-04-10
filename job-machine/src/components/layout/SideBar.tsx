@@ -1,4 +1,3 @@
-import React from "react";
 import {
   UserOutlined,
   MessageOutlined,
@@ -6,18 +5,12 @@ import {
   CarryOutOutlined,
   FlagOutlined,
 } from "@ant-design/icons";
-import { Flex, Menu } from "antd";
+import { Menu } from "antd";
 
-type Props = {};
 
-const SideBar = (props: Props) => {
+const SideBar = () => {
   return (
     <>
-    <Flex align="center" justify="center">
-        <div className="logo" style={{height: 60}}>
-            Logo
-        </div>
-    </Flex>
       <Menu
         theme="light"
         mode="inline"
@@ -52,7 +45,7 @@ const SideBar = (props: Props) => {
             key: "6",
             icon: <UserOutlined />,
             label: "Profile",
-          }
+          },
         ]}
       />
     </>
