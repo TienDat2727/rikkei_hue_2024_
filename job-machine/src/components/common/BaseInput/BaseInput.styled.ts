@@ -1,8 +1,10 @@
-import styled from 'styled-components';
-import { Input as AntInput } from 'antd';
+import styled from "styled-components";
+import { Input as AntInput } from "antd";
 
 export const Input = styled(AntInput)`
-  .ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover
+  .ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(
+      .ant-pagination-size-changer
+    ):hover
     .ant-select-selector {
     border-color: transparent;
   }
