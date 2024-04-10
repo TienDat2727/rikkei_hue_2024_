@@ -1,4 +1,5 @@
-import { Data, DataToogle } from '../interfaces/interfaces';
+import { TableColumnsType } from 'antd';
+import { CategoryData, Data, DataToogle } from '../interfaces/interfaces';
 export const SIGNIN = 'SIGNIN';
 export const SIGNIN_SUCCESS = 'SIGNIN_SUCCESS';
 export const SIGNUP = 'SIGNUP';
@@ -61,3 +62,67 @@ export const dataToogleSignUp: DataToogle = {
 };
 
 export const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
+export const dataSource: CategoryData[] = [
+  {
+    key: '1',
+    name: 'Lap trinh vien',
+    description: '10 Downing Street',
+    slug: 'lap-trinh-vien-pro',
+    count: 10,
+  },
+  {
+    key: '3',
+    name: 'Lap trinh vien',
+    description: '10 Downing Street',
+    slug: 'lap-trinh-vien-pro',
+    count: 10,
+  },
+  {
+    key: '4',
+    name: 'Lap trinh vien',
+    description: '10 Downing Street',
+    slug: 'lap-trinh-vien-pro',
+    count: 10,
+  },
+  {
+    key: '5',
+    name: 'Lap trinh vien',
+    description: '10 Downing Street',
+    slug: 'lap-trinh-vien-pro',
+    count: 10,
+  },
+  {
+    key: '2',
+    name: 'Lap trinh vien',
+    description: '10 Downing Street',
+    slug: 'lap-trinh-vien-pro',
+    count: 10,
+  },
+];
+
+export const columns = [
+  {
+    title: 'Name',
+    dataIndex: 'name',
+    key: 'name',
+    editable: true,
+  },
+  {
+    title: 'Description',
+    dataIndex: 'description',
+    key: 'description',
+    editable: true,
+  },
+  {
+    title: 'Slug',
+    dataIndex: 'slug',
+    key: 'slug',
+    editable: true,
+  },
+  {
+    title: 'Count',
+    dataIndex: 'count',
+    key: 'count',
+  },
+];
