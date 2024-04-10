@@ -3,22 +3,27 @@ import * as React from "react";
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { HelmetProvider } from "react-helmet-async";
-import CustomLayout from "Layout";
+import AuthPage from "pages/auth/AuthPage";
 import CustomForm from "components/common/BaseForm";
+import { ConfigProvider } from "antd";
+import CustomLayout from "./components/layout";
 
-const Container = styled.div`
-  min-height: 100vh;
-`;
 
 const App = () => {
   return (
     // <ThemeProvider theme={}>
-    <HelmetProvider>
-      <Container>
-        <CustomLayout />
-        <CustomForm values="hello" err="erroxx"/>
-      </Container>
-    </HelmetProvider>
+    <ConfigProvider
+      theme={{
+        token: {
+          fontFamily: "Montserrat",
+        },
+      }}
+    >
+      <HelmetProvider>
+        {/* <AuthPage /> */}
+          <CustomLayout />
+      </HelmetProvider>
+    </ConfigProvider>
     // </ThemeProvider>
   );
 };

@@ -9,19 +9,15 @@ import {
   LoginRequestAction,
   LoginSuccessAction,
   RegisterRequestAction,
-  User,
-  registerUser,
 } from '../../interfaces';
+import { FormLoginType, FormRegisterType } from 'interfaces/interfaces';
 
-export const loginRequest = (
-  email: string,
-  password: string
-): LoginRequestAction => ({
+export const loginRequest = (user: FormLoginType): LoginRequestAction => ({
   type: AuthActionTypes.LOGIN_REQUEST,
-  payload: { email, password },
+  payload: user,
 });
 
-export const loginSuccess = (user: registerUser): LoginSuccessAction => ({
+export const loginSuccess = (user: FormRegisterType): LoginSuccessAction => ({
   type: AuthActionTypes.LOGIN_SUCCESS,
   payload: user,
 });
@@ -31,12 +27,16 @@ export const loginFail = (error: string): LoginFailureAction => ({
   payload: error,
 });
 
-export const registerRequest = (user: registerUser): RegisterRequestAction => ({
+export const registerRequest = (
+  user: FormRegisterType
+): RegisterRequestAction => ({
   type: AuthActionTypes.REGISTER_REQUEST,
   payload: user,
 });
 
-export const registerSuccess = (user: registerUser): RegisterSuccessAction => ({
+export const registerSuccess = (
+  user: FormRegisterType
+): RegisterSuccessAction => ({
   type: AuthActionTypes.REGISTER_SUCCESS,
   payload: user,
 });
