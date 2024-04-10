@@ -1,95 +1,10 @@
 import React, { useState } from 'react';
 import type { TableProps } from 'antd';
-import { Form, Input, InputNumber, Popconfirm, Table, Typography } from 'antd';
+import { Form, Popconfirm, Table } from 'antd';
 import { BaseButton } from 'components/common/BaseButton/BaseButton';
-
-interface CategoryData {
-  key: React.Key;
-  name: string;
-  description: string;
-
-  count: number;
-}
-const originData: CategoryData[] = [
-  {
-    key: '1',
-    name: 'Lap trinh vien',
-    description: '10 Downing Street',
-
-    count: 10,
-  },
-  {
-    key: '3',
-    name: 'Lap trinh vien',
-    description: '10 Downing Street',
-
-    count: 10,
-  },
-  {
-    key: '4',
-    name: 'Lap trinh vien',
-    description: '10 Downing Street',
-
-    count: 10,
-  },
-  {
-    key: '5',
-    name: 'Lap trinh vien',
-    description: '10 Downing Street',
-
-    count: 10,
-  },
-  {
-    key: '2',
-    name: 'Lap trinh vien',
-    description: '10 Downing Street',
-
-    count: 10,
-  },
-];
-interface EditableCellProps extends React.HTMLAttributes<HTMLElement> {
-  editing: boolean;
-  dataIndex: string;
-  title: any;
-  inputType: 'number' | 'text';
-  record: CategoryData;
-  index: number;
-  children: React.ReactNode;
-}
-
-const EditableCell: React.FC<EditableCellProps> = ({
-  editing,
-  dataIndex,
-  title,
-  inputType,
-  record,
-  index,
-  children,
-  ...restProps
-}) => {
-  const inputNode = inputType === 'number' ? <InputNumber /> : <Input />;
-
-  return (
-    <td {...restProps}>
-      {editing ? (
-        <Form.Item
-          name={dataIndex}
-          style={{ margin: 0 }}
-          rules={[
-            {
-              required: true,
-              message: `Please Input ${title}!`,
-            },
-          ]}
-        >
-          {inputNode}
-        </Form.Item>
-      ) : (
-        children
-      )}
-    </td>
-  );
-};
+import EditableCell from './EditableCell';
+import { originData } from 'constants/constants';
+import { CategoryData } from 'interfaces/interfaces';
 
 const TableCategory: React.FC = () => {
   const [form] = Form.useForm();
@@ -175,14 +90,14 @@ const TableCategory: React.FC = () => {
         const editable = isEditing(record);
         return editable ? (
           <span>
-            <Typography.Link
+            <BaseButton
               onClick={() => save(record.key)}
               style={{ marginRight: 8 }}
             >
               Save
-            </Typography.Link>
+            </BaseButton>
             <Popconfirm title='Sure to cancel?' onConfirm={cancel}>
-              <a>Cancel</a>
+              <BaseButton>Cancel</BaseButton>
             </Popconfirm>
           </span>
         ) : (

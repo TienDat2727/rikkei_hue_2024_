@@ -8,7 +8,7 @@ import { Flex } from 'antd';
 const Category = () => {
   return (
     <ContainerCategory>
-      <h1>Chào các bạn</h1>
+      <h1>Category Managements</h1>
       <Flex justify='space-evenly'>
         <FormAddCategory className='category-add' />
         <div className='category-management'>

@@ -49,7 +49,6 @@ export interface CategoryData {
   key: React.Key;
   name: string;
   description: string;
-  slug: string;
   count: number;
 }
 export type TypeActivePanel = 'sign-in' | 'sign-up';
@@ -57,4 +56,3 @@ export type TypeActivePanel = 'sign-in' | 'sign-up';
 export type Severity = 'success' | 'error' | 'info' | 'warning';
 
 export type Dimension = number | string;
-

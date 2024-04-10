@@ -63,40 +63,35 @@ export const dataToogleSignUp: DataToogle = {
 
 export const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-export const dataSource: CategoryData[] = [
+export const originData: CategoryData[] = [
   {
     key: '1',
     name: 'Lap trinh vien',
     description: '10 Downing Street',
-    slug: 'lap-trinh-vien-pro',
     count: 10,
   },
   {
     key: '3',
     name: 'Lap trinh vien',
     description: '10 Downing Street',
-    slug: 'lap-trinh-vien-pro',
     count: 10,
   },
   {
     key: '4',
     name: 'Lap trinh vien',
     description: '10 Downing Street',
-    slug: 'lap-trinh-vien-pro',
     count: 10,
   },
   {
     key: '5',
     name: 'Lap trinh vien',
     description: '10 Downing Street',
-    slug: 'lap-trinh-vien-pro',
     count: 10,
   },
   {
     key: '2',
     name: 'Lap trinh vien',
     description: '10 Downing Street',
-    slug: 'lap-trinh-vien-pro',
     count: 10,
   },
 ];
