@@ -18,10 +18,12 @@
     "antd": "^5.16.0",
     "axios": "^1.6.8",
     "clsx": "^2.1.0",
+    "rc-picker": "^4.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.4",
     "react-hook-form": "^7.51.2",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
@@ -59,6 +61,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-infinite-scroll-component": "^5.0.0",
     "@types/redux-persist": "^4.3.1",
     "@types/styled-components": "^5.1.34"
   }

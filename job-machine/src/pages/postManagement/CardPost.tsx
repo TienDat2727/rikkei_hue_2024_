@@ -1,45 +1,47 @@
-import { Card, Flex, Typography } from "antd";
-import { BaseButton } from "components/common/BaseButton/BaseButton";
+import { Card, Flex, TimePicker, Typography } from "antd";
+import { DatePicker } from "antd";
+import dayjs from "dayjs";
+import { BaseInput } from "components/common/BaseInput";
 import { BaseSelect, Option } from "components/common/BaseSelect";
+import { BaseButton } from "components/common/BaseButton/BaseButton";
 
-const CardPost = () => {
+const { RangePicker } = DatePicker;
+
+const FilterPost = () => {
+  const dateFormat = "YYYY-MM-DD";
   return (
-    <Card id="tree-table" style={{ marginTop: "25px", marginRight: '10px' }} size="small">
+    <Card
+      id="tree-table"
+      style={{ marginTop: "25px", marginRight: "10px" }}
+      size="small"
+    >
       <Flex vertical gap="30px">
-        <Flex vertical align="flex-start">
-          <Typography.Title level={2}>Tìm kiếm</Typography.Title>
-          <Typography.Text type="secondary" strong>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
-          </Typography.Text>
-        </Flex>
-
-        <Flex gap={10}>
+        <Flex vertical align="flex-start" gap={10}>
+          <Typography.Title level={3}>Tìm kiếm</Typography.Title>
+          <BaseInput placeholder="Nhập tên/email/mã người dùng/trang/ ..." />
+          <RangePicker
+            defaultValue={[
+              dayjs("2019-09-03", dateFormat),
+              dayjs("2019-11-22", dateFormat),
+            ]}
+          />
+          <Typography.Title level={5}>Loại nội dung</Typography.Title>
           <BaseSelect
-            defaultValue="Move to trash"
-            allowClear
-            style={{ height: "40px", width: "130px" }}
-          >
-            <Option value="lucy">Move to trash</Option>
-            <Option value="view">View</Option>
-            <Option value="accept">Accept</Option>
-            <Option value="reject">Reject</Option>
-          </BaseSelect>
-          <BaseButton size="large">Apply</BaseButton>
-          <BaseSelect
-            defaultValue="All dates"
+            defaultValue="Tất cả"
             allowClear
             style={{ height: "40px", width: "110px" }}
           >
-            <Option value="all">All dates</Option>
-            <Option value="week">Last week</Option>
-            <Option value="month">Last month</Option>
+            <Option value="all">Tuyển dụng</Option>
+            <Option value="week">Ứng tuyển</Option>
           </BaseSelect>
-          <BaseButton size="large">Filter</BaseButton>
+          <Flex gap={10} justify="center">
+            <BaseButton size="large">Đặt lại</BaseButton>
+            <BaseButton size="large">Tìm kiếm</BaseButton>
+          </Flex>
         </Flex>
       </Flex>
     </Card>
   );
 };
 
-export default CardPost;
+export default FilterPost;

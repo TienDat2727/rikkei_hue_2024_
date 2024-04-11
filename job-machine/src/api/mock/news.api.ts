@@ -1,10 +1,10 @@
 import { newsTags } from '../../interfaces/interfaces';
 import { IHashTag } from '../../components/common/BaseHashTag/BaseHashTag'
 
-const avatar1 = '/avatars/avatar1.webp';
-const avatar2 = '/avatars/avatar2.webp';
-const avatar3 = '/avatars/avatar3.webp';
-const avatar4 = '/avatars/avatar4.webp';
+const avatar1 = 'https://lightence-assets.s3.amazonaws.com/avatars/avatar1.webp';
+const avatar2 = 'https://lightence-assets.s3.amazonaws.com/avatars/avatar1.webp';
+const avatar3 = 'https://lightence-assets.s3.amazonaws.com/avatars/avatar1.webp';
+const avatar4 = 'https://lightence-assets.s3.amazonaws.com/avatars/avatar1.webp';
 
 export interface Post {
   avatarUrl: string;
