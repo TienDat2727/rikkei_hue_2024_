@@ -9,9 +9,11 @@ import {
 import { Layout, Menu, Button, theme, Flex } from "antd";
 import SideBar from "./SideBar";
 import { CustomHeader } from "./CustomHeader";
-import MainContent from "./MainContent";
-import SideContent from "./SideContent";
+// import MainContent from "./MainContent";
+// import SideContent from "./SideContent";
 import logo from "../../assets/images/logo.png";
+import Post from "pages/postManagement";
+import CardPost from "pages/postManagement/CardPost";
 
 const { Header, Sider, Content } = Layout;
 
@@ -45,20 +47,25 @@ const CustomLayout: React.FC = () => {
         <Header style={{ padding: 0, background: colorBgContainer }}>
           <CustomHeader />
         </Header>
+        <Flex gap={6}>
         <Content
           style={{
-            margin: "24px 16px",
+            margin: "24px 20px",
             padding: 24,
             minHeight: 280,
+            maxWidth: "80%",
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
           }}
         >
-          <Flex gap="large">
-            <MainContent />
-            <SideContent />
+          <Flex>
+            <Post />
           </Flex>
         </Content>
+        <Flex>
+          <CardPost />
+        </Flex>
+        </Flex>
       </Layout>
     </Layout>
   );

@@ -13,7 +13,6 @@ import { BaseModal } from "components/common/BaseModel";
 import { BaseAvatar } from "components/common/BaseAvatar/BaseAvatar";
 import { BaseInput } from "components/common/BaseInput";
 import Card from "antd/lib/card";
-import TextArea from "antd/es/input/TextArea";
 
 const initialPagination: Pagination = {
   current: 1,
@@ -80,9 +79,9 @@ export const TreeTable: React.FC = () => {
   const columns = [
     {
       title: "Image or Video",
-      dataIndex: "name",
-      key: "name",
-      width: "100px",
+    dataIndex: "name",
+    key: "name",
+    width: "100px",
     },
     {
       title: "Title",
@@ -128,40 +127,26 @@ export const TreeTable: React.FC = () => {
               >
                 <Flex gap={30}>
                   <Col span={12}>
-                    <Card style={{height: '200px'}}>
-                      <Flex gap={20}>
-                        <BaseAvatar />
-                        <Flex vertical gap={10}>
-                          <div>User name</div>
-                          <div>Designer</div>
-                        </Flex>
-                      </Flex>
-                    </Card>
+                  <Card>
+                  <Flex gap={20}>
+                  <BaseAvatar />
+                  <Flex vertical gap={10}>
+                    <div>User name</div>
+                    <div>Designer</div>
+                  </Flex>
+                  </Flex>
+                  </Card>
                   </Col>
                   <Col span={10}>
-                    <Flex gap={20} vertical>
-                      <BaseInput placeholder="User name" />
-                      <BaseInput placeholder="Email" />
-                      <TextArea
-                        rows={4}
-                        placeholder="Description"
-                        maxLength={6}
-                      />
-                    </Flex>
+                    <BaseInput placeholder="User name"/>
                   </Col>
                 </Flex>
               </BaseModal>
             </div>
             <Flex gap={5}>
-              <BaseButton onClick={() => setIsShowViewModal(true)}>
-                View
-              </BaseButton>
-              <BaseButton onClick={() => setIsShowAcceptModal(true)}>
-                Accept
-              </BaseButton>
-              <BaseButton onClick={() => setIsShowRejectModal(true)}>
-                Reject
-              </BaseButton>
+              <BaseButton onClick={() => setIsShowViewModal(true)}>View</BaseButton>
+              <BaseButton onClick={() => setIsShowAcceptModal(true)}>Accept</BaseButton>
+              <BaseButton onClick={() => setIsShowRejectModal(true)}>Reject</BaseButton>
             </Flex>
           </>
         );

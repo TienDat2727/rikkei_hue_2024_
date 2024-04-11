@@ -6,6 +6,7 @@ type CustomImageProps = {
   alt: string;
   height?: number;
   className?: string;
+  preview?: boolean;
 };
 
 const BaseImage = ({ src, alt, height, className = '' }: CustomImageProps) => {

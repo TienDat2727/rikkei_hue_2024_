@@ -11,3 +11,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  box-sizing: border-box;
+}
+
+
+:root {
+  /* color */
+  --text-color: #ccc;
+  --border-color: #949499;
+  --primary-color: #C5091F;
+  --secondary-color: #870413;
+  --container-color: #f0f1f1;
+  --hover-primary-color: #FFF1F0;
+  --hover-secondary-color: #e1ebde;
+  --button-primary-color: linear-gradient(0deg, #D60335 0%, #FF9270 100%);
+  --button-secondary-color: linear-gradient(360deg, #18B528 0%, #61EE0A 100%);
+  --input-color: #3A3A3C3D;
+
+  
+  /* font size */
+  --fs-title: 14px;
+  --fs-heading: 24px;
+  --fs-sub-title: 12px;
+  --fs-menu: 14px;
+
+}
