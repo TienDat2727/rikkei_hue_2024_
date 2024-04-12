@@ -8,4 +8,7 @@ export const TablesWrapper = styled(Card)`
 export const ContainerPost = styled.div`
   width: 100%;
 
+  .post-item {
+    margin-bottom: 3rem;
+  }
 `

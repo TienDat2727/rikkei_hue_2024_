@@ -6,12 +6,15 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu, Button, theme, Flex } from "antd";
+import { Layout, Menu, Button, theme, Flex, Card } from "antd";
 import SideBar from "./SideBar";
 import { CustomHeader } from "./CustomHeader";
-import MainContent from "./MainContent";
-import SideContent from "./SideContent";
+// import MainContent from "./MainContent";
+// import SideContent from "./SideContent";
 import logo from "../../assets/images/logo.png";
+import PostContainer from "pages/postManagement";
+import FilterPost from "pages/postManagement/CardPost";
+import { BaseButton } from "components/common/BaseButton/BaseButton";
 
 const { Header, Sider, Content } = Layout;
 
@@ -45,20 +48,36 @@ const CustomLayout: React.FC = () => {
         <Header style={{ padding: 0, background: colorBgContainer }}>
           <CustomHeader />
         </Header>
-        <Content
-          style={{
-            margin: "24px 16px",
-            padding: 24,
-            minHeight: 280,
-            background: colorBgContainer,
-            borderRadius: borderRadiusLG,
-          }}
-        >
-          <Flex gap="large">
-            <MainContent />
-            <SideContent />
+        <Flex gap={6}>
+          <Content
+            style={{
+              padding: 24,
+              minHeight: 280,
+              maxWidth: "80%",
+              position: "relative",
+            }}
+          >
+            <Flex>
+              <PostContainer />
+            </Flex>
+          </Content>
+          <Flex vertical style={{ position: "fixed", right: "0" }}>
+            <Card
+              style={{ marginTop: "25px", marginRight: "10px" }}
+              size="small"
+            >
+              <Flex gap={10} style={{ justifyContent: "center" }}>
+                <Flex>
+                  <BaseButton size="large">Xóa</BaseButton>
+                </Flex>
+                <Flex>
+                  <BaseButton size="large">Duyệt</BaseButton>
+                </Flex>
+              </Flex>
+            </Card>
+            <FilterPost />
           </Flex>
-        </Content>
+        </Flex>
       </Layout>
     </Layout>
   );
